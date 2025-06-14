@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <link rel="stylesheet" href='../node_modules/bootstrap/dist/css/bootstrap.css'>
+    <link rel="stylesheet" href='../node_modules/bootstrap-icons/font/bootstrap-icons.css'>
+    <script src="../src/index.js"></script>
+</head>
+
+<body onload="onbodyLoad()">
+    <header>
+        <div class="container-fluid p-5">
+            <h1 class="bg-warning text-center mt-4 p-3">Employee Detils</h1>
+        </div>
+    </header>
+    <div class="text-end me-5">
+        <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Employee <i
+                class="bi bi-person"></i></button>
+    </div>
+
+    <div class="container-fluid text-center">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Salary</th>
+
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+
+
+            </tbody>
+        </table>
+
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Enter Employee Details</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label>Enter Employee Name</label>
+                    <input class="form-control" type="text" id="empName">
+                    <label>Enter Employee Salary</label>
+                    <input class="form-control" type="text" id="empSalary">
+                    <div class="text-end">
+                        <button class="btn btn-success mt-4 " onclick="saveEmployee()">Save</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+           </div>
+            <!-- Modal -->
+            <div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true" aria-labelledby="editModallable">
+                <div class="modal-dialog">
+                    <div class="modal-content p-3">
+                        <div class="modal-header">
+                            <h5 class="modal-title fs-5" id="editModallable">Edit Employee</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        
+                        <div class="mb-2">
+                            <input type="text" id="editEmpId" class="form-control" placeholder="ID">
+                        </div>
+                        <div class="mb-2">
+                            <input type="text" id="editEmpName" class="form-control" placeholder="Name">
+                        </div>
+                        <div class="mb-2">
+                            <input type="number" id="editEmpSalary" class="form-control" placeholder="Salary">
+                        </div>
+                        <button class="btn btn-success" onclick="updateEmployee()">Update</button>
+                    </div>
+                </div>
+            </div>
+
+            <script src="../node_modules/jquery/dist/jquery.js"></script>
+            <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

@@ -13,6 +13,8 @@
   "author": "raju",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^5.3.6"
+    "bootstrap": "^5.3.6",
+    "bootstrap-icons": "^1.13.1",
+    "jquery": "^3.7.1"
   }
 }
