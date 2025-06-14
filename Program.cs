@@ -13,9 +13,17 @@ namespace EmployeeApi
             builder.Services.AddControllers();
 
             builder.Services.AddSingleton<DbHelper>();
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("OpenAll", policy =>
+                    policy.AllowAnyOrigin()
+                          .AllowAnyHeader()
+                          .AllowAnyMethod());
+            });
 
+           
             var app = builder.Build();
-
+            app.UseCors("OpenAll");
             // Configure the HTTP request pipeline.
 
             app.UseHttpsRedirection();
